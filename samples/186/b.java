@@ -1,0 +1,33 @@
+class Arrays {
+    /**
+     * Returns a string representation of the contents of the specified array.
+     * The string representation consists of a list of the array's elements,
+     * enclosed in square brackets ({@code "[]"}).  Adjacent elements are
+     * separated by the characters {@code ", "} (a comma followed by a
+     * space).  Elements are converted to strings as by
+     * {@code String.valueOf(char)}.  Returns {@code "null"} if {@code a}
+     * is {@code null}.
+     *
+     * @param a the array whose string representation to return
+     * @return a string representation of {@code a}
+     * @since 1.5
+     */
+    public static String toString(char[] a) {
+	if (a == null)
+	    return "null";
+	int iMax = a.length - 1;
+	if (iMax == -1)
+	    return "[]";
+
+	StringBuilder b = new StringBuilder();
+	b.append('[');
+	for (int i = 0;; i++) {
+	    b.append(a[i]);
+	    if (i == iMax)
+		return b.append(']').toString();
+	    b.append(", ");
+	}
+    }
+
+}
+
